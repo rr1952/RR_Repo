@@ -1,0 +1,48 @@
+package com.syntel.tripdistance;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+public class CurrencyConversionController {
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+	@GetMapping("/distance/from/{from}/to/{to}/midstop/{midstop}")
+	public DistanceBean convertCurrency(@PathVariable String from, @PathVariable String to,
+			@PathVariable String midstop) {
+
+		// bit of code reuse, try to move to a method call if possible
+
+		DistanceBean response = dBean(from, to);
+		DistanceBean responseToM = dBean(from, midstop);
+		DistanceBean responseFromM = dBean(midstop, to);
+
+		BigDecimal total = responseToM.getDistance().add(responseFromM.getDistance())
+
+		return new DistanceBean(response.getId(), from, to, responseToM.getTo(), response.getDistance(), 
+				responseToM.getDistance(), responseFromM.getDistance(), 
+				response.getDistance(), response.getPort());
+	}
+
+	private DistanceBean dBean(String from, String to) {
+		Map<String, String> distance = new HashMap<>();
+		distance.put("from", from);
+		distance.put("to", to);
+
+		ResponseEntity<DistanceBean> responseEntity = new RestTemplate()
+				.getForEntity("http://localhost:8000/distance/from/{from}/to/{to}", DistanceBean.class, distance);
+
+		DistanceBean response = responseEntity.getBody();
+		return response;
+	}
+}

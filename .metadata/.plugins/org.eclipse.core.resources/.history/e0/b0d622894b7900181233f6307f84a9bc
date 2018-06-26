@@ -1,0 +1,38 @@
+/**
+ * The controller class to map what URL will reply with the necessary information.
+ * Give an instance of Environment and E.V. Repository, automatically set up through the
+ * Autowired annotation.
+ * One thing I'm not entirely sure on is how the EV Repository interface is able to 
+ * generate a value.
+ * - Richard
+ */
+package com.syntel.microservices;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ForexController {
+  
+  @Autowired
+  private Environment environment;
+  
+  @Autowired
+  private ExchangeValueRepository repository;
+  
+  @GetMapping("/currency-exchange/from/{from}/to/{to}")
+  public ExchangeValue retrieveExchangeValue
+    (@PathVariable String from, @PathVariable String to){
+    
+    ExchangeValue exchangeValue = 
+        repository.find(from, to);
+    
+    exchangeValue.setPort(
+        Integer.parseInt(environment.getProperty("local.server.port")));
+    
+    return exchangeValue;
+  }
+}

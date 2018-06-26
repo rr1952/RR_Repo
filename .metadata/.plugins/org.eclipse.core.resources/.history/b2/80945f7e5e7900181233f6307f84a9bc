@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package com.syntel.iot;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * @author Richard
+ * Following the Forex Microservice Tutorial.
+ * Where is findByFromAndTo defined? It's not an arbitrary name, as the application does not function
+ * if the method name is changed.
+ */
+
+public interface IotRepository extends 
+    JpaRepository<IotExchange, Long>{
+  IotExchange findByFromAndTo(String from, String to);
+}

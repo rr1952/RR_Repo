@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.syntel.microservices;
+
+/**
+ * @author Richard
+ *
+ */
+public class ForexController {
+
+}

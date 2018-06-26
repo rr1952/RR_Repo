@@ -1,0 +1,6 @@
+insert into iot_distance(id,origin,destination,distance,port)
+values(10001,'A','B',65,0);
+insert into iot_distance(id,origin,destination,distance,port)
+values(10002,'A','C',75,0);
+insert into iot_distance(id,origin,destination,distance,port)
+values(10003,'B','C',25,0);

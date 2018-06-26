@@ -1,0 +1,19 @@
+package com.syntel.tripdistance;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * My attempt at something resembling a microservice.
+ * This calls upon the distance application on port 8000 to pull data and perform calculations
+ */
+@SpringBootApplication
+public class TripDistanceApplication {
+
+	// this is on port 8100. 
+	// http://localhost:8100/distance/from/Ottawa/to/London/midstop/Washington
+	// Mix and matching should be available. Just keep in mind case sensitive.
+	public static void main(String[] args) {
+		SpringApplication.run(TripDistanceApplication.class, args);
+	}
+}

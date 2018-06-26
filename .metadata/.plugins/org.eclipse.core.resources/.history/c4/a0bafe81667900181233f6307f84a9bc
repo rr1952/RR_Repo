@@ -1,0 +1,12 @@
+package com.syntel.microservicescurrencyconversion;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MicroservicesCurrencyConversionApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MicroservicesCurrencyConversionApplication.class, args);
+	}
+}

@@ -1,0 +1,5 @@
+package com.syntel.microservicescurrencyconversion;
+
+public class CurrencyConversionController {
+
+}

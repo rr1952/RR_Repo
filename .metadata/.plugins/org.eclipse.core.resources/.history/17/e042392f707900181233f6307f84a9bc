@@ -1,0 +1,14 @@
+package com.syntel.tripdistance;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TripDistanceApplication {
+
+	// this is on port 8100.
+	// localhost:8100/distance/from/{from}/to/{to}/midstop/{midstop}
+	public static void main(String[] args) {
+		SpringApplication.run(TripDistanceApplication.class, args);
+	}
+}

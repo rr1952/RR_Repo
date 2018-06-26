@@ -1,0 +1,5 @@
+package com.syntel.rabbitmq;
+
+public class Receiver {
+
+}

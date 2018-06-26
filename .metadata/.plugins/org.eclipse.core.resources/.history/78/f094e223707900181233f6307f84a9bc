@@ -1,0 +1,102 @@
+package com.syntel.tripdistance;
+
+import java.math.BigDecimal;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+public class DistanceBean {
+
+	public DistanceBean(Long id, String from, String to, String midpoint, BigDecimal distance,
+			BigDecimal origintomidpoint, BigDecimal midpointtodestination, BigDecimal total) {
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.midpoint = midpoint;
+		this.distance = distance;
+		this.origin_to_midpoint = origintomidpoint;
+		this.midpoint_to_destination = midpointtodestination;
+		this.total_distance = total;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public String getMidpoint() {
+		return midpoint;
+	}
+
+	public void setMidpoint(String midpoint) {
+		this.midpoint = midpoint;
+	}
+
+	public BigDecimal getDistance() {
+		return distance;
+	}
+
+	public void setDistance(BigDecimal distance) {
+		this.distance = distance;
+	}
+
+	public BigDecimal getOrigintomidpoint() {
+		return origin_to_midpoint;
+	}
+
+	public void setOrigintomidpoint(BigDecimal origintomidpoint) {
+		this.origin_to_midpoint = origintomidpoint;
+	}
+
+	public BigDecimal getMidpointtodestination() {
+		return midpoint_to_destination;
+	}
+
+	public void setMidpointtodestination(BigDecimal midpointtodestination) {
+		this.midpoint_to_destination = midpointtodestination;
+	}
+
+	public BigDecimal getTotal() {
+		return total_distance;
+	}
+
+	public void setTotal(BigDecimal total) {
+		this.total_distance = total;
+	}
+
+	private Long id;
+	private String from;
+	private String to;
+	private String midpoint;
+	
+	@JsonIgnore
+	private BigDecimal distance;
+	
+	private BigDecimal origin_to_midpoint;
+	private BigDecimal midpoint_to_destination;
+	private BigDecimal total_distance;
+
+	public DistanceBean() {
+
+	}
+
+
+}

@@ -1,0 +1,59 @@
+package com.syntel.microservices;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class ExchangeValue {
+
+	@Id
+	private Long id;
+
+	@Column(name = "currency-from")
+	private String from;
+
+	@Column(name = "currency-to")
+	private String to;
+
+	private Double conversionMultiple;
+	private int port;
+
+	public ExchangeValue() {
+
+	}
+
+	public ExchangeValue(Long id, String from, String to, Double conversionMultiple) {
+		// is this line necessary?
+		// super();
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.conversionMultiple = conversionMultiple;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public Double getConversionMultiple() {
+		return conversionMultiple;
+	}
+
+	public int getPort() {
+		return port;
+	}
+
+	public void setPort(int port) {
+		this.port = port;
+	}
+
+}

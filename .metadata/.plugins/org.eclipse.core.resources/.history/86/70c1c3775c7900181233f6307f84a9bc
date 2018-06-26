@@ -1,0 +1,16 @@
+package com.syntel.iot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Just runs the Spring Boot application.
+ * Seems that with the annotation below, it'll enable Spring Boot to properly set things up.
+ */
+@SpringBootApplication
+public class MicroservicesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MicroservicesApplication.class, args);
+	}
+}

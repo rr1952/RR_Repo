@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.syntel.microservices;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * @author Richard
+ * Following the Forex Microservice Tutorial.
+ */
+
+public interface ExchangeValueRepository extends 
+    JpaRepository<ExchangeValue, Long>{
+  ExchangeValue find(String from, String to);
+}

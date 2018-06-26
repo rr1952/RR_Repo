@@ -1,0 +1,12 @@
+package com.syntel.tripdistance;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TripDistanceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TripDistanceApplication.class, args);
+	}
+}

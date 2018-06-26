@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="microservices"/>
+<aop-project name="trip-distance"/>
+<aop-project name="IOT_Project"/>
+</aop-reference-model>

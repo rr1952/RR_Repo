@@ -1,0 +1,17 @@
+/**
+ * 
+ */
+package com.syntel.microservices;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ * @author Richard
+ * Following the Forex Microservice Tutorial.
+ * findByFromAndTo
+ */
+
+public interface ExchangeValueRepository extends 
+    JpaRepository<ExchangeValue, Long>{
+  ExchangeValue findByFromAndTo(String from, String to);
+}

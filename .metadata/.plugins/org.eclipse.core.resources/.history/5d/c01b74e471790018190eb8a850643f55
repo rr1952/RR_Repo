@@ -1,0 +1,99 @@
+package com.syntel.tripdistance;
+
+import java.math.BigDecimal;
+
+public class DistanceBean {
+
+	public DistanceBean(Long id, String from, String to, String midpoint, BigDecimal originalDistance,
+			BigDecimal originToMidpoint, BigDecimal midpointToDestination, BigDecimal total_distance) {
+		this.id = id;
+		this.from = from;
+		this.to = to;
+		this.midpoint = midpoint;
+		this.originalDistance = originalDistance;
+		this.originToMidpoint = originToMidpoint;
+		this.midpointToDestination = midpointToDestination;
+		this.total_distance = total_distance;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getTo() {
+		return to;
+	}
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+	public String getMidpoint() {
+		return midpoint;
+	}
+
+	public void setMidpoint(String midpoint) {
+		this.midpoint = midpoint;
+	}
+
+	public BigDecimal getOriginalDistance() {
+		return originalDistance;
+	}
+
+	public void setDistance(BigDecimal distance) {
+		this.originalDistance = distance;
+	}
+
+	public BigDecimal getOriginToMidpoint() {
+		return originToMidpoint;
+	}
+
+	public void setOriginToMidpoint(BigDecimal originToMidpoint) {
+		this.originToMidpoint = originToMidpoint;
+	}
+
+	public BigDecimal getMidpointToDestination() {
+		return midpointToDestination;
+	}
+
+	public void setMidpointToDestination(BigDecimal midpointToDestination) {
+		this.midpointToDestination = midpointToDestination;
+	}
+
+	public BigDecimal getTotal_distance() {
+		return total_distance;
+	}
+
+	public void setTotal_distance(BigDecimal total_distance) {
+		this.total_distance = total_distance;
+	}
+
+	private Long id;
+	private String from;
+	private String to;
+	private String midpoint;
+
+	// I would like to hide this field, but it seems to break the
+	private BigDecimal originalDistance;
+
+	private BigDecimal originToMidpoint;
+	private BigDecimal midpointToDestination;
+	private BigDecimal total_distance;
+
+	public DistanceBean() {
+
+	}
+
+}

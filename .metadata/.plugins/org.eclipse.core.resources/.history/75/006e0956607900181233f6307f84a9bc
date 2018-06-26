@@ -1,0 +1,38 @@
+/**
+ * The controller class to map what URL will reply with the necessary information.
+ * Give an instance of Environment and Repository, automatically set up through the
+ * Autowired annotation.
+ * 
+ * Inspired by the ForexExchange tutorial.
+ * - Richard
+ */
+package com.syntel.iot;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class IotController {
+  
+  @Autowired
+  private Environment environment;
+  
+  @Autowired
+  private IotRepository repository;
+  
+  @GetMapping("/distance/from/{from}/to/{to}")
+  public IotDistance retrieveDistance
+    (@PathVariable String from, @PathVariable String to){
+    
+    IotDistance distanceValue = 
+        repository.findByFromAndTo(from, to);
+    
+    distanceValue.setPort(
+        Integer.parseInt(environment.getProperty("local.server.port")));
+    
+    return distanceValue;
+  }
+}
